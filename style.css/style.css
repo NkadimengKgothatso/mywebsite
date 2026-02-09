@@ -1,0 +1,18 @@
+h1{
+    color: rgb(4, 47, 127);
+  
+}
+h2{
+     color: rgb(46, 107, 222);
+}
+h3{
+      color: rgb(25, 26, 27);
+}
+/* p{
+    color: rgb(0, 213, 255);
+} */
+body{
+   background-image: url("back.jpeg");
+   background-repeat: no-repeat;
+   background-size: cover;
+}
