@@ -1,20 +1,40 @@
-h1{
+.one{
     color: rgb(4, 47, 127);
   
 }
-h2{
+.two{
      color: rgb(46, 107, 222);
 }
-h3{
+.three{
       color: rgb(25, 26, 27);
 }
-
+.pi{
+    color: rgb(25, 26, 27);
+    font-size: xx-large;
+}
 body{
     background-color: rgb(255, 255, 255);
     font-family: Arial, Helvetica, sans-serif;
 }
-p.next{
-    text-align: left;
-    font-size: large;
-    color: rgb(25, 26, 27);
+/* .next {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    font-size: 30px;
+    text-decoration: none;
+    opacity: 0;
+    transition: 0.3s ease;
 }
+
+/* add arrow using CSS */
+/* .next::before {
+    content: "➜";
+} */
+
+/* body:hover .next {
+    opacity: 1;
+} */
+
+/* .next:hover {
+    color: rgb(46, 107, 222);
+} */ 
