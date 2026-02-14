@@ -16,25 +16,223 @@ body{
     background-color: rgb(255, 255, 255);
     font-family: Arial, Helvetica, sans-serif;
 }
-/* .next {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
+.next {
+    position: fixed !important;
+    bottom: 20px !important;
+    left: 20px !important;
     font-size: 30px;
     text-decoration: none;
     opacity: 0;
     transition: 0.3s ease;
+    z-index: 9999;
 }
 
-/* add arrow using CSS */
-/* .next::before {
+.next::before {
     content: "➜";
-} */
+}
 
-/* body:hover .next {
+body:hover .next {
     opacity: 1;
-} */
+}
+body{
+    background-color: rgb(108, 198, 237);
+}
+/* Semantic block styling */
+/* Semantic block styling */
+section.look {
+    position: relative;
+    margin: 80px auto;           /* more space around */
+    padding: 50px 40px 50px 80px; /* extra left padding for stripe */
+    max-width: 1000px;           /* bigger card */
+    border-radius: 20px;
+    background-color: rgba(36, 159, 225, 0.9);
+    color: rgb(11, 11, 11);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    z-index: 1; /* ensures it stays above background hearts */
+}
 
-/* .next:hover {
-    color: rgb(46, 107, 222);
-} */ 
+
+/* Accent stripe on the left side */
+section.look::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 12px;                /* slightly thicker stripe */
+    height: 100%;
+    border-radius: 20px 0 0 20px;
+    background: linear-gradient(to bottom, #00ffea, #ff00b3);
+    z-index: 2;                 /* keep stripe visible above card background */
+}
+
+/* Hover effect on section */
+section.look:hover {
+    transform: translateY(-8px) scale(1.02);
+    background-color: rgb(234, 24, 157);
+}
+
+
+/* Headings styling */
+section.look h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-family: 'Segoe UI', sans-serif;
+}
+section.look {
+    z-index: 1;
+}
+
+
+section.look h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+section.look h3 {
+    font-size: 1.2em;
+    font-weight: 300;
+}
+
+/* Paragraph inside h3 */
+section.look p.pi {
+    line-height: 1.6;
+    margin: 0;
+    font-style: italic;
+}
+
+/* Next arrow button */
+.next {
+    position: fixed;
+    bottom: 20px;
+    right: 20px; /* move to right corner */
+    font-size: 40px;
+    text-decoration: none;
+    opacity: 0;
+    transition: 0.3s ease;
+    color: white;
+}
+
+.next::before {
+    content: "➜";
+}
+
+body:hover .next {
+    opacity: 1;
+}
+
+.next:hover {
+    color: rgb(255, 220, 0); /* bright hover color */
+    transform: scale(1.2);
+}
+
+
+
+
+/* Container for images */
+.images {
+    display: flex;                  /* flex layout */
+    justify-content: center;        /* center horizontally */
+    align-items: flex-start;        /* align tops of images */
+    gap: 30px;                      /* space between images */
+    flex-wrap: nowrap;               /* prevent wrapping */
+    margin-top: 15px;
+    overflow-x: auto;               /* allow horizontal scroll on small screens */
+    padding-bottom: 15px;           /* space for scrollbar */
+}
+
+/* Style each image with frame */
+.images img {
+    border: 8px solid rgb(26, 24, 25);        /* white frame */
+    border-radius: 12px;            /* rounded corners */
+    border-style: double;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* subtle shadow */
+    width: 250px;                   /* consistent size */
+    height: 250px;
+    object-fit: cover;              /* ensure images fit nicely */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for images */
+.images img:hover {
+    transform: scale(1.05);          /* slightly zoom on hover */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+you {
+    color: red;          /* text color */
+    text-decoration: none; /* optional: remove underline */
+}
+
+you:hover {
+    color: darkred;      /* hover effect */
+    text-decoration: underline; /* optional: underline on hover */
+}
+.centered-section {
+    display: flex;                /* flex layout */
+    flex-direction: column;       /* stack children vertically */
+    justify-content: center;      /* center vertically (if container height allows) */
+    align-items: center;          /* center horizontally */
+    text-align: center;           /* center text inside headings */
+    margin: 40px auto;            /* space around the section */
+    max-width: 800px;             /* optional: limit width for readability */
+    padding: 20px;
+}
+/* General body */
+
+/* Remove the stripe from the section */
+section.look::before {
+    content: none; /* remove the left stripe */
+}
+
+/* Hearts container stays behind everything */
+.hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;  /* clicks go through hearts */
+    overflow: hidden;
+    z-index: 0; /* behind all content */
+}
+
+/* Hearts style */
+.hearts span {
+    position: absolute;
+    font-size: rem; /* bigger hearts */
+    color: #ff4d6d;
+    opacity: 0.8;
+    bottom: -50px;  /* start below the screen */
+    animation-name: floatHearts;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+/* Keyframes for floating hearts */
+@keyframes floatHearts {
+    0% {
+        transform: translateX(0) translateY(0) rotate(0deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateX(50px) translateY(-120vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Assign different positions, durations, and delays to each heart */
+.hearts span:nth-child(1) { left: 10%; animation-duration: 8s; animation-delay: 0s; }
+.hearts span:nth-child(2) { left: 20%; animation-duration: 6s; animation-delay: 2s; }
+.hearts span:nth-child(3) { left: 35%; animation-duration: 7s; animation-delay: 1s; }
+.hearts span:nth-child(4) { left: 50%; animation-duration: 9s; animation-delay: 3s; }
+.hearts span:nth-child(5) { left: 65%; animation-duration: 8s; animation-delay: 0.5s; }
+.hearts span:nth-child(6) { left: 80%; animation-duration: 10s; animation-delay: 2.5s; }
+.hearts span:nth-child(7) { left: 90%; animation-duration: 6s; animation-delay: 1.5s; }
+
+/* Make sure the section content appears above the hearts */
+section.look, .centered-section {
+    position: relative;
+    z-index: 1; /* above hearts */
+}
