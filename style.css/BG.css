@@ -1,0 +1,54 @@
+
+body{
+    background-color: rgb(108, 198, 237);
+}
+/* Hearts container stays behind everything */
+.hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;  /* clicks go through hearts */
+    overflow: hidden;
+    z-index: 0; /* behind all content */
+}
+
+/* Hearts style */
+.hearts span {
+    position: absolute;
+    font-size: rem; /* bigger hearts */
+    color: #ff4d6d;
+    opacity: 0.8;
+    bottom: -50px;  /* start below the screen */
+    animation-name: floatHearts;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+/* Keyframes for floating hearts */
+@keyframes floatHearts {
+    0% {
+        transform: translateX(0) translateY(0) rotate(0deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateX(50px) translateY(-120vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Assign different positions, durations, and delays to each heart */
+.hearts span:nth-child(1) { left: 10%; animation-duration: 8s; animation-delay: 0s; }
+.hearts span:nth-child(2) { left: 20%; animation-duration: 6s; animation-delay: 2s; }
+.hearts span:nth-child(3) { left: 35%; animation-duration: 7s; animation-delay: 1s; }
+.hearts span:nth-child(4) { left: 50%; animation-duration: 9s; animation-delay: 3s; }
+.hearts span:nth-child(5) { left: 65%; animation-duration: 8s; animation-delay: 0.5s; }
+.hearts span:nth-child(6) { left: 80%; animation-duration: 10s; animation-delay: 2.5s; }
+.hearts span:nth-child(7) { left: 90%; animation-duration: 6s; animation-delay: 1.5s; }
+
+/* Make sure the section content appears above the hearts */
+section.look, .centered-section {
+    position: relative;
+    z-index: 1; /* above hearts */
+}
