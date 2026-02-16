@@ -1,198 +1,45 @@
-.one{
-    color: rgb(4, 47, 127);
+.text{
+    margin: 20px;
+    color: #795702;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav {
+    display: flex;             /* make children (figures) line up horizontally */
+    justify-content: space-around; /* space between images */
+    align-items: center;       /* vertically align captions with images */
+    /* flex-wrap: wrap;           allows wrapping to next line if screen is small */
+    gap: 20px;                 /* optional: space between images */
+    margin: 20px 0;            /* space around the nav section */
+    list-style:none ;
+}
+
+figure {
+    margin: 0;                 /* remove default figure margin */
+    text-align: center;        /* center caption under image */
+}
+
+figure img {
+    width: 200px;              /* resize images to a uniform size */
+    height: auto;
+    border-radius: 10px;       /* optional: rounded corners */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* optional: shadow effect */
+    transition: transform 0.3s;
+}
+
+figure img:hover {
+    transform: scale(1.05);    /* optional: hover zoom effect */
+}
+
+.P-arrengment{
+    padding: 15px ;
+    border: 2px solid rgb(104, 79, 11);
+    border-radius: 8px;
+    margin: 10px 0px;
+}
+.P-arrengment:hover{
+  
+    background-color: #f6eace;
+    color: black;
   
 }
-.two{
-     color: rgb(46, 107, 222);
-}
-.three{
-      color: rgb(25, 26, 27);
-}
-.pi{
-    color: rgb(25, 26, 27);
-    font-size: xx-large;
-}
-body{
-    background-color: rgb(255, 255, 255);
-    font-family: Arial, Helvetica, sans-serif;
-}
-.next {
-    position: fixed !important;
-    bottom: 20px !important;
-    left: 20px !important;
-    font-size: 30px;
-    text-decoration: none;
-    opacity: 0;
-    transition: 0.3s ease;
-    z-index: 9999;
-}
-
-.next::before {
-    content: "➜";
-}
-
-body:hover .next {
-    opacity: 1;
-}
-
-/* Semantic block styling */
-section.look {
-    position: relative;
-    margin: 100px auto;        /* more space around */
-    padding: 80px 60px;        /* bigger internal spacing */
-    max-width: 1000px;         /* wider block */
-    min-height: 300px;         /* taller block */
-    
-    border-radius: 20px;
-    background-color: rgba(2, 94, 233, 0.9);
-    color: rgb(28, 26, 26);
-    box-shadow: 0 12px 30px rgba(0, 252, 189, 0.35);
-
-    /* CENTER CONTENT */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;   /* vertical center */
-    align-items: center;       /* horizontal center */
-    text-align: center;        /* center text */
-
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    z-index: 1;
-}
-
-
-/* Accent stripe on the left side */
-section.look::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 12px;                /* slightly thicker stripe */
-    height: 100%;
-    border-radius: 20px 0 0 20px;
-    background: linear-gradient(to bottom, #0c26a8, #00b7ff);
-    z-index: 2;                 /* keep stripe visible above card background */
-}
-
-/* Hover effect on section */
-section.look:hover {
-    transform: translateY(-8px) scale(1.02);
-    background-color: rgb(24, 171, 234);
-}
-
-
-/* Headings styling */
-/* Headings styling */
-section.look h1 {
-    font-size: 4rem;              /* bigger main title */
-    margin-bottom: 20px;
-    font-family: 'Segoe UI', sans-serif;
-    font-weight: 700;
-}
-
-section.look {
-    z-index: 1;
-}
-
-/* Subtitle */
-section.look h2 {
-    font-size: 2.5rem;            /* larger subtitle */
-    margin-bottom: 30px;
-    font-weight: 400;
-}
-
-/* Text container */
-section.look h3 {
-    font-size: 2rem;              /* much bigger text */
-    font-weight: 300;
-}
-
-/* Paragraph inside h3 */
-section.look p.pi {
-    line-height: 1.7;
-    margin: 0 auto;
-    font-style: italic;
-    font-size: 1.6rem;            /* bigger readable paragraph */
-    max-width: 900px;             /* keeps layout clean */
-}
-
-
-/* Next arrow button */
-.next {
-    position: fixed;
-    bottom: 20px;
-    right: 20px; /* move to right corner */
-    font-size: 40px;
-    text-decoration: none;
-    opacity: 0;
-    transition: 0.3s ease;
-    color: white;
-}
-
-.next::before {
-    content: "➜";
-}
-
-body:hover .next {
-    opacity: 1;
-}
-
-.next:hover {
-    color: rgb(255, 220, 0); /* bright hover color */
-    transform: scale(1.2);
-}
-
-
-
-
-/* Container for images */
-.images {
-    display: flex;                  /* flex layout */
-    justify-content: center;        /* center horizontally */
-    align-items: flex-start;        /* align tops of images */
-    gap: 30px;                      /* space between images */
-    flex-wrap: nowrap;               /* prevent wrapping */
-    margin-top: 15px;
-    overflow-x: auto;               /* allow horizontal scroll on small screens */
-    padding-bottom: 15px;           /* space for scrollbar */
-}
-
-/* Style each image with frame */
-.images img {
-    border: 8px solid rgb(26, 24, 25);        /* white frame */
-    border-radius: 12px;            /* rounded corners */
-    border-style: double;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* subtle shadow */
-    width: 250px;                   /* consistent size */
-    height: 250px;
-    object-fit: cover;              /* ensure images fit nicely */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Hover effect for images */
-.images img:hover {
-    transform: scale(1.05);          /* slightly zoom on hover */
-    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-}
-
-you {
-    color: red;          /* text color */
-    text-decoration: none; /* optional: remove underline */
-}
-
-you:hover {
-    color: darkred;      /* hover effect */
-    text-decoration: underline; /* optional: underline on hover */
-}
-.centered-section {
-    display: flex;                /* flex layout */
-    flex-direction: column;       /* stack children vertically */
-    justify-content: center;      /* center vertically (if container height allows) */
-    align-items: center;          /* center horizontally */
-    text-align: center;           /* center text inside headings */
-    margin: 40px auto;            /* space around the section */
-    max-width: 800px;             /* optional: limit width for readability */
-    padding: 20px;
-}
-/* General body */
-
-
