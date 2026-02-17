@@ -1,6 +1,20 @@
 body{
     background-color: rgb(255, 255, 255);
 }
+.bg{
+    background-image: url("bgpic.jpeg");
+    background-size: contain;   /* shows full image */
+    background-position: center;
+    background-repeat: no-repeat;
+}
+body{
+    margin:0;
+}
+
+.bg{
+    min-height:100vh;
+}
+
 .border {
     border: 2px solid rgb(33, 26, 5);
     padding: 15px 25px;
