@@ -56,3 +56,18 @@ body{
     color: black;
   
 }
+.bk-image {
+    width: 100%;        /* keeps image inside block */
+    height: auto;       /* prevents stretching */
+    display: block;     /* removes extra spacing */
+    border-radius: 10px; /* optional - nice rounded corners */
+}
+.bk {
+    display: flex;
+    justify-content: center;
+}
+
+.bk-image {
+    max-width: 500px;
+    width: 100%;
+}
