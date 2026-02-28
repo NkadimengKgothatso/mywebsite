@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #header{
+            border: 2px solid #795702;
+            text-align: center;
+            padding: 20px;
+            background-color:    #f6eace;
+
+            
+        }
+        .text{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color:#795702;;
+            text-spacing-trim: space-allS;
+        }
+        #box {
+    padding: 20px;
+    margin: 20px auto;
+    border: 2px solid #795702; /* slightly thicker border */
+    border-radius: 12px;       /* rounded corners for modern look */
+    background-color: #f6eace;
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;          /* prevent too wide on large screens */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* subtle shadow */
+}
+        </style>
+    <link rel="stylesheet" href="style.css/style.css">
+    <link rel="stylesheet" href="style.css/BG.css">
+
+</head>
+<body>
+
+    <p class="text">Day-3</p>
+    <section  id ="header" class="text">
+        <h1>Meme-Boss</h1>
+        <h3>Welcome to the Meme Boss<br>Let’s drop a meme to brighten your day 😄 </h3>
+
+    </section>
+    
+
+    <section>
+        <h3 class="text"><b>What I Learned Today</b></h3>
+
+<nav class="P-arrangement">
+    <ul class="text">
+        <li>JavaScript basics (functions, async/await)</li>
+        <li>How to call APIs with fetch()</li>
+        <li>Displaying API data in HTML</li>
+        <li>DOM manipulation (updating images, text)</li>
+        <li>CSS styling for containers and images</li>
+        <li>Proper use of IDs and classes</li>
+        <li>Debugging JS with browser console</li>
+    </ul>
+</nav>
+    </section>
+
+
+
+    <section id="box">
+
+    <div class="meme-container">
+        <img id="meme-image" src="" alt="Meme Image" width="400">
+        <h3 id="meme-title"></h3>
+        <p id="author"></p>
+    </div>
+
+    <button onclick="loadMeme()">New Meme</button>
+
+</section>        
+        
+
+
+
+
+    <script  src="jscode.js">
+       
+    </script>
+
+     <a href="page4.html" class="block">next </a>
+       
+</body>
+</html>
